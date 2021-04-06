@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url, include
+import apps.OD_data.urls as OD_data_urls
+
+admin.site.site_title = '管理后台'
+admin.site.site_header = '目标检测管理后台'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('data/', include(OD_data_urls)),
 ]
