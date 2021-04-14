@@ -27,6 +27,7 @@ admin.site.site_header = '目标检测管理后台'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('data/', include(OD_data_urls)),
-    path('', views.MainPage)
+    path('api/data/', include(OD_data_urls)),
+    path('main/', views.MainPage),
+    path('', views.DefaultPage),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -19,3 +19,5 @@ class CategoryView(APIView):
             'category_name': res.data,
         },
         status=status.HTTP_200_OK,)
+
+
