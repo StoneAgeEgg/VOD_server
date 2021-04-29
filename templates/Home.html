@@ -1,40 +1,26 @@
 <!DOCTYPE html>
-{% load staticfiles %}
 <html style="font-size: 16px;">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="keywords" content="Please upload a video">
-    <meta name="description" content="">
-    <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>Home</title>
-    <link rel="stylesheet" href="{% static "nicepage.css" %}" media="screen">
-    <link rel="stylesheet" href="{% static "Home.css" %}" media="screen">
-    <script class="u-script" type="text/javascript" src="{% static "jquery.js" %}" defer=""></script>
-    <script class="u-script" type="text/javascript" src="{% static "nicepage.js" %}" defer=""></script>
-    <meta name="generator" content="Nicepage 3.11.0, nicepage.com">
+    <title>视频目标检测</title>
+
+    <link rel="stylesheet" href="/static/nicepage.css" media="screen">
+    <link rel="stylesheet" href="/static/Home.css" media="screen">
+    <link rel="stylesheet" href="/static/bootstrap/dist/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="/static/bootstrap-fileinput/css/fileinput.min.css" media="screen">
+    <script type="text/javascript" src="/static/jquery/jquery.min.js"></script>
+    <script class="u-script" type="text/javascript" src="/static/nicepage.js"></script>
+    <script type="text/javascript" src="/static/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/bootstrap-fileinput/js/fileinput.min.js"></script>
+
     <link id="u-theme-google-font" rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
-
-
-    <script type="application/ld+json">{
-        "@context": "http://schema.org",
-        "@type": "Organization",
-        "name": "",
-        "url": "index.html",
-        "logo": "images/default-logo.png"
-    }</script>
-    <meta property="og:title" content="Home">
-    <meta property="og:type" content="website">
-    <meta name="theme-color" content="#478ac9">
-    <link rel="canonical" href="index.html">
-    <meta property="og:url" content="index.html">
 </head>
+
 <body class="u-body">
 <header class="u-clearfix u-header u-header" id="sec-d21b">
     <div class="u-clearfix u-sheet u-sheet-1">
         <a href="https://nicepage.com" class="u-image u-logo u-image-1">
-            <img src="{% static "images/default-logo.png" %}" class="u-logo-image u-logo-image-1">
+            <img src="/static/images/default-logo.png" class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
             <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0;">
@@ -58,80 +44,136 @@
                 <ul class="u-nav u-unstyled u-nav-1">
                     <li class="u-nav-item"><a
                             class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                            href="" style="padding: 10px 20px;">Open</a>
-                            
+                            href="" style="padding: 10px 20px;" data-toggle="modal" data-target="#exampleModal">文件上传</a>
                     </li>
                     <li class="u-nav-item"><a
                             class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                            href="{% static "Test.html" %}" style="padding: 10px 20px;">Test</a>
+                            href="#" style="padding: 10px 20px;" onclick="mainpage()">主页面</a>
                     </li>
                     <li class="u-nav-item"><a
                             class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                            style="padding: 10px 20px;">Select</a>
+                            href="#" style="padding: 10px 20px;" onclick="">模型详细信息</a>
                     </li>
                     <li class="u-nav-item"><a
                             class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                            href="Contact.html" style="padding: 10px 20px;">Contact</a>
+                            href="#" style="padding: 10px 20px;" onclick="aTest()">测试</a>
                     </li>
                     <li class="u-nav-item"><a
                             class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                            style="padding: 10px 20px;">More</a>
+                            href="#" style="padding: 10px 20px;" onclick="">更多</a>
                     </li>
                 </ul>
-            </div>
-            <div class="u-custom-menu u-nav-container-collapse">
-                <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-                    <div class="u-sidenav-overflow">
-                        <div class="u-menu-close"></div>
-                        <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#"
-                                                      style="padding: 10px 20px;">Open</a>
-                            </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Test.html"
-                                                      style="padding: 10px 20px;">Test</a>
-                            </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px;">Select</a>
-                            </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.html"
-                                                      style="padding: 10px 20px;">Contact</a>
-                            </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                      style="padding: 10px 20px;">More</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
             </div>
         </nav>
     </div>
 </header>
-<section class="u-align-center u-clearfix u-image u-shading u-section-1" src="" data-image-width="256"
-         data-image-height="256" id="sec-79dd">
-    <div class="u-clearfix u-sheet u-sheet-1">
-        <h1 class="u-text u-title u-text-1">Please upload a video</h1>
-        <p class="u-large-text u-text u-text-variant u-text-2">Video Object Detection.</p>
-        <a href="#" class="u-btn u-button-style u-palette-2-base u-btn-1">Read More</a>
+
+<div id="sideB" hidden>
+    <div class="col-md-2" style="background-color:#f1f1f1;">
+        <ul class="nav nav-pills nav-stacked">
+            <li role="presentation" id="bar-1"><a href="#" onclick="RenderJPG()">查看图片</a></li>
+            <li role="presentation" id="bar-1"><a href="#" onclick="RenderMP4()">查看视频</a></li>
+            <li role="presentation" id="bar-2"><a href="">修改模型</a></li>
+            <li role="presentation" id="bar-3"><a href="">批量操作</a></li>
+            <li role="presentation" id="bar-3"><a href="">导出报告</a></li>
+        </ul>
     </div>
-</section>
 
+    <div id="forvideo">
 
-
-<footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-feb1">
-    <div class="u-clearfix u-sheet u-sheet-1">
-        <p class="u-small-text u-text u-text-variant u-text-1">Made by XXX, XXX, XXX</p>
+        {#        <div class="col-md-4">#}
+        {#            <div class="thumbnail">#}
+        {#                <div class="embed-responsive embed-responsive-16by9">#}
+        {#                    <video controls>#}
+        {#                        <source src="{{ MEDIA_URL }}Upload_File/3.mp4" type="video/mp4">#}
+        {#                    </video>#}
+        {#                </div>#}
+        {#                <div class="caption">#}
+        {#                    <h3>默认算法</h3>#}
+        {#                    <p>...</p>#}
+        {#                    <p><a href="#" class="btn btn-primary" role="button">拆分成图片</a>#}
+        {#                        <a href="#" class="btn btn-default" role="button">目标检测</a></p>#}
+        {#                </div>#}
+        {#            </div>#}
+        {#        </div>#}
     </div>
-</footer>
-<section class="u-backlink u-clearfix u-grey-80">
-    <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
-        <span>Website Templates</span>
-    </a>
-    <p class="u-text">
-        <span>created with</span>
-    </p>
-    <a class="u-link" href="https://nicepage.com/" target="_blank">
-        <span>Website Builder Software</span>
-    </a>.
-</section>
+
+    <div id="forpic">
+
+    </div>
+
+</div>
+
+<div id="plain-pic">
+    <section class="u-align-center u-clearfix u-image u-shading u-section-1" data-image-width="256"
+             data-image-height="256" id="sec-79dd">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <h1 class="u-text u-title u-text-1">Please upload a video</h1>
+            <p class="u-large-text u-text u-text-variant u-text-2">Video Object Detection.</p>
+            <button type="button" class="u-btn u-button-style u-palette-2-base u-btn-1" data-toggle="modal"
+                    data-target="#exampleModal">打开文件
+            </button>
+        </div>
+    </section>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                        <span class="modal-title" style="color: black; float: left; font-size: 1.25rem;"
+                              id="exampleModalLabel">上传视频或图片文件</span>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                        style="font-size: 32px">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input id="File_upload" name="myinput" type="file" multiple class="file-loading">
+            </div>
+            <div id="kv-success-1" class="alert alert-success" style="margin-top:10px;display:none"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消
+                </button>
+                <button type="button" class="btn btn-primary" onclick="file_upload()">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="videoDisplay" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document" style="margin-left: 150px; margin-top: 70px;">
+        <div class="modal-content" style="width: 1075px; height: 600px;  left: 10%; top: auto">
+            <img id="ModalPic" src="" style="width: 100%; height: 100%; text-align: center;" alt="...">
+        </div>
+    </div>
+</div>
+
+<div id="foot">
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-feb1">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <p class="u-small-text u-text u-text-variant u-text-1">Made by XXX, XXX, XXX</p>
+        </div>
+    </footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+        <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
+            <span>Website </span>
+        </a>
+        <p class="u-text">
+            <span>created by</span>
+        </p>
+        <a class="u-link" href="https://nicepage.com/" target="_blank">
+            <span>USTB AI Lab 3D</span>
+        </a>.
+    </section>
+</div>
 </body>
 </html>
+
+<script type="text/javascript" src="/static/Mycode.js"></script>

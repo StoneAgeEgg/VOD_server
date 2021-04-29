@@ -6,10 +6,8 @@ from rest_framework import status
 from .serializers import *
 # Create your views here.
 
-
 class CategoryView(APIView):
     """标签类别"""
-
     def get(self, request):
         category = models.LabelCategory.objects.all()
         res = CategorySerializer(category, many=True) # Serializer 的主要工作是将 Python 数据结构序列化为其它格式（XML／JSON 等等）。
@@ -17,6 +15,18 @@ class CategoryView(APIView):
             'code': 200,
             'message': 'Are you OK?',
             'category_name': res.data,
+        },
+        status=status.HTTP_200_OK,)
+
+
+class OpenSinglePic(APIView):
+    """ 打开单张图片 """
+    def post(self,request):
+
+        return Response({
+            'code': 200,
+            'message': 'Are you OK?',
+            'pic_url': 0,
         },
         status=status.HTTP_200_OK,)
 

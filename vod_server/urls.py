@@ -16,10 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
-from django.conf import settings
-from django.conf.urls.static import static
 
 from . import views
+from . import videostream
 import apps.OD_data.urls as OD_data_urls
 
 admin.site.site_title = '管理后台'
@@ -28,6 +27,11 @@ admin.site.site_header = '目标检测管理后台'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/data/', include(OD_data_urls)),
-    path('main/', views.MainPage),
-    path('', views.DefaultPage),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('', views.MainPage),
+    path('monitor/', videostream.streamhr),
+    path('comfirmName/', videostream.tellName),
+    path('picsave/', videostream.savingpic),
+    url(r'^uploadFiles/', views.upload),
+    url(r'^getFileName/', views.GetFileName),
+    path('default', views.DefaultPage),
+]

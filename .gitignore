@@ -4,3 +4,4 @@ migrations
 *.xml
 /.idea/
 /.vscode
+.mp4
